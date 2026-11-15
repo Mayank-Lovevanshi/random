@@ -47,4 +47,8 @@ public class ProductService
         log.debug("Retrieving all products by category : {}", category);
         return productRepository.findByCategory(category);
     }
+    public List<Product> findByCategoryAndPriceBetween(String category, int start, int end)
+    {
+        return productRepository.findByCategoryAndPriceBetween(category,start,end);
+    }
 }

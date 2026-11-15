@@ -22,8 +22,10 @@ public class ProductController
         return new ResponseEntity<>(productService.addProduct(product), HttpStatus.CREATED);
     }
     @GetMapping
-    public ResponseEntity<List<Product>> findByCategory(@RequestParam String category)
+    public ResponseEntity<List<Product>> findByCategoryAndPriceBetween(@RequestParam String category,
+                                                                       @RequestParam Integer start,
+                                                                       @RequestParam Integer end)
     {
-        return new ResponseEntity<>(productService.findByCategory(category), HttpStatus.OK);
+        return new ResponseEntity<>(productService.findByCategoryAndPriceBetween(category,start,end), HttpStatus.OK);
     }
 }
