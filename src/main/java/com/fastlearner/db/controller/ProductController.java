@@ -33,4 +33,8 @@ public class ProductController
     {
         return new ResponseEntity<>(productService.findById(id), HttpStatus.OK);
     }
+    @GetMapping ResponseEntity<Product> findByName(@RequestParam String name)
+    {
+        return new ResponseEntity<>(productService.findByName(name),HttpStatus.OK);
+    }
 }

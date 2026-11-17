@@ -51,4 +51,9 @@ public class ProductService
     {
         return productRepository.findByCategoryAndPriceBetween(category,start,end);
     }
+    public Product findByName(String name)
+    {
+        log.debug("Retrieving product by name : {}", name);
+        return productRepository.findByName(name).orElse(null);
+    }
 }
