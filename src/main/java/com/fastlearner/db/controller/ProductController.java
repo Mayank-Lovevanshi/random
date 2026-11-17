@@ -28,4 +28,9 @@ public class ProductController
     {
         return new ResponseEntity<>(productService.findByCategoryAndPriceBetween(category,start,end), HttpStatus.OK);
     }
+    @GetMapping("{id}")
+    public ResponseEntity<Product> findById(@PathVariable long id)
+    {
+        return new ResponseEntity<>(productService.findById(id), HttpStatus.OK);
+    }
 }
